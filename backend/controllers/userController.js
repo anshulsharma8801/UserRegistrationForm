@@ -1,11 +1,11 @@
 const RegisteredUser = require('../models/RegisterForm')
 
 exports.addUser = async (req, res, next) => {
+    console.log("entered");
     try {
         const { username, email, phone, dob } = req.body
 
         const newUser = await RegisteredUser.create({username, email, phone, dob});
-        // verify email;
 
         newUser.save();
         return res.status(201).json({
