@@ -18,8 +18,11 @@ const RegisterForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        emailjs.sendForm('service_xt1ppm7', 'template_3ybjvqo', form.current, 'bwDYfpms3161YPNEE')
+        //emailjs.send('service_xt1ppm7', 'template_3ybjvqo', form.current, 'bwDYfpms3161YPNEE')
 
+        emailjs.send("service_xt1ppm7","template_3ybjvqo",{
+            email: email, username: username, phone: phone, dob: date
+            },'bwDYfpms3161YPNEE');
         const newUser = {
             username,
             email,
